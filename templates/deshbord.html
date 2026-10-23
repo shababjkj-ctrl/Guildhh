@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Guild Bot Control</title>
+<style>
+  body{background:#0a0a12;color:#e0e0e0;font-family:monospace;padding:20px;max-width:1200px;margin:0 auto}
+  h1{color:#ffd700;margin:0 0 20px}
+  h2{color:#ffd700;font-size:14px;margin:0 0 10px}
+  .panel{background:#16161e;padding:15px;border-radius:8px;margin-bottom:15px;border:1px solid #2a2a33}
+  input{background:#0a0a12;color:#e0e0e0;border:1px solid #333;padding:8px;border-radius:4px;width:150px;margin-right:10px;font-family:monospace}
+  label{display:inline-block;width:130px;color:#888}
+  button{background:#3a8;color:#fff;border:0;padding:10px 24px;border-radius:4px;cursor:pointer;font-family:monospace;font-weight:bold;margin-right:6px}
+  button.stop{background:#c33}
+  button:disabled{opacity:0.4;cursor:not-allowed}
+  .row{margin-bottom:10px}
+  #status{padding:5px 14px;border-radius:4px;font-weight:bold;font-size:12px}
+  .running{background:#2a7}
+  .stopped{background:#555}
+  #logs{background:#000;padding:12px;height:320px;overflow-y:auto;font-size:12px;white-space:pre-wrap;border-radius:4px;border:1px solid #222;line-height:1.4}
+  iframe{width:100%;height:600px;border:1px solid #2a2a33;border-radius:8px;background:#0a0a12}
+</style>
+</head>
+<body>
+<h1>🎮 Guild Bot — Control Panel</h1>
+
+<div class="panel">
+  <h2>Status</h2>
+  <span id="status" class="stopped">stopped</span>
+  <span id="uptime" style="color:#888;font-size:12px;margin-left:10px"></span>
+</div>
+
+<div class="panel">
+  <h2>Config</h2>
+  <div class="row"><label>Region:</label><input id="region" value="BD"></div>
+  <div class="row"><label>Parallel/bot:</label><input id="parallel" type="number" value="2" min="1" max="10"></div>
+  <div class="row"><label>Bot count:</label><input id="bots" type="number" value="20" min="1" max="50"></div>
+  <div class="row"><label>Guild UID:</label><input id="guild_uid" value="3105974875" style="width:200px"></div>
+</div>
+
+<div class="panel">
+  <h2>Control</h2>
+  <button id="startBtn" onclick="start()">▶ Start</button>
+  <button id="stopBtn" class="stop" onclick="stop()" disabled>■ Stop</button>
+</div>
+
+<div class="panel">
+  <h2>Live Logs</h2>
+  <div id="logs"></div>
+</div>
+
+<div class="panel">
+  <h2>Account Stats (from internal 8765 dashboard)</h2>
+  <iframe id="statsFrame" src="http://127.0.0.1:8765/"></iframe>
+</div>
+
+<script>
+let logOffset = 0;
+const $ = id => document.getElementById(id);
+
+async function loadConfig(){
+  const d = await (await fetch('/api/config')).json();
+  region.value=d.config.region;
+  parallel.value=d.config.parallel;
+  bots.value=d.config.bots;
+  guild_uid.value=d.config.guild_uid;
+}
+
+async function refreshStatus(){
+  const d = await (await fetch('/api/status')).json();
+  if(d.running){
+    status.textContent='running (pid '+d.pid+')';
+    status.className='running';
+    uptime.textContent='uptime: '+d.uptime+'s';
+    startBtn.disabled=true; stopBtn.disabled=false;
+  } else {
+    status.textContent='stopped';
+    status.className='stopped';
+    uptime.textContent=d.exit_code?('exit '+d.exit_code):'';
+    startBtn.disabled=false; stopBtn.disabled=true;
+  }
+}
+
+async function refreshLogs(){
+  const d = await (await fetch('/api/logs?offset='+logOffset)).json();
+  if(d.content){
+    logs.textContent += d.content;
+    logs.scrollTop = logs.scrollHeight;
+    logOffset = d.offset;
+  }
+}
+
+async function start(){
+  const cfg = {region:region.value, parallel:+parallel.value, bots:+bots.value, guild_uid:guild_uid.value};
+  logs.textContent=''; logOffset=0;
+  const d = await (await fetch('/api/start',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cfg)})).json();
+  if(d.error) alert(d.error);
+  refreshStatus();
+}
+
+async function stop(){
+  const d = await (await fetch('/api/stop',{method:'POST'})).json();
+  if(d.error) alert(d.error);
+  refreshStatus();
+}
+
+loadConfig();
+refreshStatus();
+refreshLogs();
+setInterval(refreshStatus, 2000);
+setInterval(refreshLogs, 1500);
+// iframe reload every 15s so it updates as bot runs
+setInterval(()=>{ statsFrame.src = statsFrame.src; }, 15000);
+</script>
+</body>
+</html>

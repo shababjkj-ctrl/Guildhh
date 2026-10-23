@@ -6,3 +6,5 @@ protobuf>=7.35.1
 protobuf-decoder
 google-play-scraper
 aiohttp
+flask
+gunicorn

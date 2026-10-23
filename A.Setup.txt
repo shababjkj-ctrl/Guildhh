@@ -1,0 +1,173 @@
+╔══════════════════════════════════════════╗
+║       👑 ANURAG SINGH OFFICIAL 👑        ║
+║                                          ║
+║       🚀 DEVELOPER ZONE 🚀               ║
+║     PREMIUM FREE FIRE BOT SOURCE         ║
+╚══════════════════════════════════════════╝
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+       💎 OFFICIAL DEVELOPER INFO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👨‍💻 Developer    : Anurag Singh
+🎬 YouTube      : Developer Zone
+📢 Telegram     : https://t.me/developerzoneAk
+💬 Contact      : @Developer_NovaG
+▶️ Setup Video  : https://youtu.be/Sg_7eWGLgl4
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          📦 SOURCE INFORMATION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🔥 Project      : Free Fire Bot
+🐍 Language     : Python
+📱 Platform     : Android / Termux
+🔐 Protection   : Encoded & Obfuscated
+⚡ Main File    : main.py
+
+📂 REQUIRED FILES:
+
+  📄 main.py
+  📄 Anuragsingh_pb2.py
+  📄 Aksingh_pb2.py
+  📄 requirements.txt
+  📄 SETUP.txt
+
+⚠️ IMPORTANT:
+Keep all required files together.
+Do not rename or delete any source files.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+        🚀 TERMUX INSTALLATION GUIDE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 1 — UPDATE TERMUX
+
+pkg update -y && pkg upgrade -y
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 2 — INSTALL PYTHON
+
+pkg install python -y
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 3 — ENABLE STORAGE
+
+termux-setup-storage
+
+Allow storage permission when requested.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 4 — OPEN SOURCE FOLDER
+
+cd "/storage/emulated/0/Download/YOUR_FOLDER"
+
+⚠️ Replace YOUR_FOLDER with your actual
+source folder name.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 5 — INSTALL REQUIREMENTS
+
+python -m pip install -r requirements.txt
+
+Wait until installation finishes.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ STEP 6 — START THE BOT
+
+python main.py
+
+🎉 Congratulations!
+Your bot will start if all dependencies
+and required configuration are correct.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          🛠️ COMMON ERROR FIXES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ No module named xyz
+
+✅ FIX:
+python -m pip install -r requirements.txt
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Can't open file 'main.py'
+
+✅ FIX:
+Make sure you are inside the correct
+source folder.
+
+Check files using:
+
+ls
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Permission denied
+
+✅ FIX:
+Check Termux storage permission.
+
+termux-setup-storage
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+❌ Connection / Login Error
+
+✅ FIX:
+Check internet connection, account
+configuration and server availability.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           🔐 SOURCE PROTECTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🛡️ Protected Python Source
+🔒 Encoded & Compressed Code
+💎 Integrity Verification
+👑 Developer Branding
+
+⚠️ Protection does not guarantee that
+reverse engineering is impossible.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+          📢 OFFICIAL COMMUNITY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+🎬 YOUTUBE CHANNEL
+➤ Developer Zone
+
+📢 TELEGRAM CHANNEL
+➤https://t.me/developerzoneAk
+
+▶️ COMPLETE SETUP VIDEO
+➤ https://youtu.be/Sg_7eWGLgl4
+
+👨‍💻 DEVELOPER SUPPORT
+➤ @Developer_NovaG
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+           ❤️ SUPPORT THE CREATOR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+👍 LIKE THE VIDEO
+💬 LEAVE A COMMENT
+🔔 SUBSCRIBE TO DEVELOPER ZONE
+📢 JOIN OUR TELEGRAM CHANNEL
+🚀 SHARE WITH YOUR FRIENDS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+      👑 CREATED BY ANURAG SINGH 👑
+
+          💎 DEVELOPER ZONE 💎
+
+       ❤️ THANK YOU FOR SUPPORT ❤️
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
